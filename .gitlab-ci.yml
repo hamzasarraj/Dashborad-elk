@@ -1,0 +1,35 @@
+# This is a sample .gitlab-ci.yml file for a Spring Boot application
+
+# Define the image to use for the build
+image: maven:3.5.4
+
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  # Define environment-specific variables here
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+# Job to build the Spring Boot application
+build:
+  stage: build
+  script:
+    - mvn clean package -DskipTests
+
+# Job to run tests
+test:
+  stage: test
+  script:
+    - mvn test
+
+# Job to deploy the application
+#deploy:
+ # stage: deploy
+ # script:
+    # Replace with your deployment commands
+   # - echo "Deploying the Spring Boot application"
+   # - # Add your deployment commands here
+ # only:
+   # - master  # Deploy only when changes are pushed to the master branch

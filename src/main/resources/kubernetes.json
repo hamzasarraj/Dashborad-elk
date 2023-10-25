@@ -1,0 +1,292 @@
+class V1Pod {
+    apiVersion: null
+    kind: null
+    metadata: class V1ObjectMeta {
+        annotations: {checksum/config1=271343be771ba0875c1870faf28c8dda727c59d9ec1865ab5a10f9e07e4e2b7b, checksum/config2=9f01b131e324537a6f6564a8333cfd3b612cb3edbf7cc1a5152a5852cc5c158f, kubernetes.io/psp=eks.privileged}
+        clusterName: null
+        creationTimestamp: 2023-05-29T16:57:03.000+01:00
+        deletionGracePeriodSeconds: null
+        deletionTimestamp: null
+        finalizers: null
+        generateName: backend-6bc44c47c4-
+        generation: null
+        labels: {app=backend, pod-template-hash=6bc44c47c4, username=tlefi}
+        managedFields: [class V1ManagedFieldsEntry {
+            apiVersion: v1
+            fieldsType: FieldsV1
+            fieldsV1: {f:metadata={f:annotations={.={}, f:checksum/config1={}, f:checksum/config2={}}, f:generateName={}, f:labels={.={}, f:app={}, f:pod-template-hash={}, f:username={}}, f:ownerReferences={.={}, k:{"uid":"705abe58-b6fe-48b0-b3e8-899c0ced9b42"}={.={}, f:apiVersion={}, f:blockOwnerDeletion={}, f:controller={}, f:kind={}, f:name={}, f:uid={}}}}, f:spec={f:containers={k:{"name":"backend"}={.={}, f:envFrom={}, f:image={}, f:imagePullPolicy={}, f:name={}, f:ports={.={}, k:{"containerPort":8080,"protocol":"TCP"}={.={}, f:containerPort={}, f:protocol={}}}, f:resources={.={}, f:limits={.={}, f:cpu={}, f:memory={}}, f:requests={.={}, f:cpu={}, f:memory={}}}, f:terminationMessagePath={}, f:terminationMessagePolicy={}}}, f:dnsPolicy={}, f:enableServiceLinks={}, f:restartPolicy={}, f:schedulerName={}, f:securityContext={}, f:terminationGracePeriodSeconds={}}}
+            manager: kube-controller-manager
+            operation: Update
+            time: 2023-05-29T16:57:03.000+01:00
+        }, class V1ManagedFieldsEntry {
+            apiVersion: v1
+            fieldsType: FieldsV1
+            fieldsV1: {f:status={f:conditions={k:{"type":"ContainersReady"}={.={}, f:lastProbeTime={}, f:lastTransitionTime={}, f:status={}, f:type={}}, k:{"type":"Initialized"}={.={}, f:lastProbeTime={}, f:lastTransitionTime={}, f:status={}, f:type={}}, k:{"type":"Ready"}={.={}, f:lastProbeTime={}, f:lastTransitionTime={}, f:status={}, f:type={}}}, f:containerStatuses={}, f:hostIP={}, f:phase={}, f:podIP={}, f:podIPs={.={}, k:{"ip":"10.105.14.45"}={.={}, f:ip={}}}, f:startTime={}}}
+            manager: kubelet
+            operation: Update
+            time: 2023-05-29T16:57:13.000+01:00
+        }]
+        name: backend-6bc44c47c4-mslth
+        namespace: vermeg-reporting-vermg-dev-40
+        ownerReferences: [class V1OwnerReference {
+            apiVersion: apps/v1
+            blockOwnerDeletion: true
+            controller: true
+            kind: ReplicaSet
+            name: backend-6bc44c47c4
+            uid: 705abe58-b6fe-48b0-b3e8-899c0ced9b42
+        }]
+        resourceVersion: 145583224
+        selfLink: null
+        uid: e8324334-4b31-44aa-96b8-4968eefdd9af
+    }
+    spec: class V1PodSpec {
+        activeDeadlineSeconds: null
+        affinity: null
+        automountServiceAccountToken: null
+        containers: [class V1Container {
+            args: null
+            command: null
+            env: null
+            envFrom: [class V1EnvFromSource {
+                configMapRef: null
+                prefix: null
+                secretRef: class V1SecretEnvSource {
+                    name: backend
+                    optional: null
+                }
+            }, class V1EnvFromSource {
+                configMapRef: class V1ConfigMapEnvSource {
+                    name: backend
+                    optional: null
+                }
+                prefix: null
+                secretRef: null
+            }]
+            image: 893979256661.dkr.ecr.eu-west-1.amazonaws.com/palmyra-group/palmyra-project/reporting-studio/backend:4.0-b463108
+            imagePullPolicy: Always
+            lifecycle: null
+            livenessProbe: null
+            name: backend
+            ports: [class V1ContainerPort {
+                containerPort: 8080
+                hostIP: null
+                hostPort: null
+                name: null
+                protocol: TCP
+            }]
+            readinessProbe: null
+            resources: class V1ResourceRequirements {
+                limits: {cpu=Quantity{number=2, format=DECIMAL_SI}, memory=Quantity{number=4294967296, format=BINARY_SI}}
+                requests: {cpu=Quantity{number=2, format=DECIMAL_SI}, memory=Quantity{number=4294967296, format=BINARY_SI}}
+            }
+            securityContext: null
+            startupProbe: null
+            stdin: null
+            stdinOnce: null
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            tty: null
+            volumeDevices: null
+            volumeMounts: [class V1VolumeMount {
+                mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+                mountPropagation: null
+                name: kube-api-access-29nqt
+                readOnly: true
+                subPath: null
+                subPathExpr: null
+            }]
+            workingDir: null
+        }]
+        dnsConfig: null
+        dnsPolicy: ClusterFirst
+        enableServiceLinks: true
+        ephemeralContainers: null
+        hostAliases: null
+        hostIPC: null
+        hostNetwork: null
+        hostPID: null
+        hostname: null
+        imagePullSecrets: null
+        initContainers: null
+        nodeName: ip-10-105-14-3.eu-west-1.compute.internal
+        nodeSelector: null
+        overhead: null
+        preemptionPolicy: PreemptLowerPriority
+        priority: 0
+        priorityClassName: null
+        readinessGates: null
+        restartPolicy: Always
+        runtimeClassName: null
+        schedulerName: default-scheduler
+        securityContext: class V1PodSecurityContext {
+            fsGroup: null
+            fsGroupChangePolicy: null
+            runAsGroup: null
+            runAsNonRoot: null
+            runAsUser: null
+            seLinuxOptions: null
+            seccompProfile: null
+            supplementalGroups: null
+            sysctls: null
+            windowsOptions: null
+        }
+        serviceAccount: default
+        serviceAccountName: default
+        setHostnameAsFQDN: null
+        shareProcessNamespace: null
+        subdomain: null
+        terminationGracePeriodSeconds: 30
+        tolerations: [class V1Toleration {
+            effect: NoExecute
+            key: node.kubernetes.io/not-ready
+            operator: Exists
+            tolerationSeconds: 300
+            value: null
+        }, class V1Toleration {
+            effect: NoExecute
+            key: node.kubernetes.io/unreachable
+            operator: Exists
+            tolerationSeconds: 300
+            value: null
+        }]
+        topologySpreadConstraints: null
+        volumes: [class V1Volume {
+            awsElasticBlockStore: null
+            azureDisk: null
+            azureFile: null
+            cephfs: null
+            cinder: null
+            configMap: null
+            csi: null
+            downwardAPI: null
+            emptyDir: null
+            ephemeral: null
+            fc: null
+            flexVolume: null
+            flocker: null
+            gcePersistentDisk: null
+            gitRepo: null
+            glusterfs: null
+            hostPath: null
+            iscsi: null
+            name: kube-api-access-29nqt
+            nfs: null
+            persistentVolumeClaim: null
+            photonPersistentDisk: null
+            portworxVolume: null
+            projected: class V1ProjectedVolumeSource {
+                defaultMode: 420
+                sources: [class V1VolumeProjection {
+                    configMap: null
+                    downwardAPI: null
+                    secret: null
+                    serviceAccountToken: class V1ServiceAccountTokenProjection {
+                        audience: null
+                        expirationSeconds: 3607
+                        path: token
+                    }
+                }, class V1VolumeProjection {
+                    configMap: class V1ConfigMapProjection {
+                        items: [class V1KeyToPath {
+                            key: ca.crt
+                            mode: null
+                            path: ca.crt
+                        }]
+                        name: kube-root-ca.crt
+                        optional: null
+                    }
+                    downwardAPI: null
+                    secret: null
+                    serviceAccountToken: null
+                }, class V1VolumeProjection {
+                    configMap: null
+                    downwardAPI: class V1DownwardAPIProjection {
+                        items: [class V1DownwardAPIVolumeFile {
+                            fieldRef: class V1ObjectFieldSelector {
+                                apiVersion: v1
+                                fieldPath: metadata.namespace
+                            }
+                            mode: null
+                            path: namespace
+                            resourceFieldRef: null
+                        }]
+                    }
+                    secret: null
+                    serviceAccountToken: null
+                }]
+            }
+            quobyte: null
+            rbd: null
+            scaleIO: null
+            secret: null
+            storageos: null
+            vsphereVolume: null
+        }]
+    }
+    status: class V1PodStatus {
+        conditions: [class V1PodCondition {
+            lastProbeTime: null
+            lastTransitionTime: 2023-05-29T16:57:03.000+01:00
+            message: null
+            reason: null
+            status: True
+            type: Initialized
+        }, class V1PodCondition {
+            lastProbeTime: null
+            lastTransitionTime: 2023-05-29T16:57:13.000+01:00
+            message: null
+            reason: null
+            status: True
+            type: Ready
+        }, class V1PodCondition {
+            lastProbeTime: null
+            lastTransitionTime: 2023-05-29T16:57:13.000+01:00
+            message: null
+            reason: null
+            status: True
+            type: ContainersReady
+        }, class V1PodCondition {
+            lastProbeTime: null
+            lastTransitionTime: 2023-05-29T16:57:03.000+01:00
+            message: null
+            reason: null
+            status: True
+            type: PodScheduled
+        }]
+        containerStatuses: [class V1ContainerStatus {
+            containerID: docker://97ed05a13faa40d86f8271348bbcd83bebbb3a3932bc47118f8390af8eadc17d
+            image: 893979256661.dkr.ecr.eu-west-1.amazonaws.com/palmyra-group/palmyra-project/reporting-studio/backend:4.0-b463108
+            imageID: docker-pullable://893979256661.dkr.ecr.eu-west-1.amazonaws.com/palmyra-group/palmyra-project/reporting-studio/backend@sha256:0a3368707ab3191f6199dc1c4845e2dac6656c7d436cabc572e2f407f6622441
+            lastState: class V1ContainerState {
+                running: null
+                terminated: null
+                waiting: null
+            }
+            name: backend
+            ready: true
+            restartCount: 0
+            started: true
+            state: class V1ContainerState {
+                running: class V1ContainerStateRunning {
+                    startedAt: 2023-05-29T16:57:12.000+01:00
+                }
+                terminated: null
+                waiting: null
+            }
+        }]
+        ephemeralContainerStatuses: null
+        hostIP: 10.105.14.3
+        initContainerStatuses: null
+        message: null
+        nominatedNodeName: null
+        phase: Running
+        podIP: 10.105.14.45
+        podIPs: [class V1PodIP {
+            ip: 10.105.14.45
+        }]
+        qosClass: Guaranteed
+        reason: null
+        startTime: 2023-05-29T16:57:03.000+01:00
+    }
+}

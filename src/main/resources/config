@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1Ea3dNakE1TWpFd01Gb1hEVE15TURnek1EQTVNakV3TUZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTUdoCmxGaFQxK3d6eGxhcTZRd2JrcXZGL09Rd2huSW1ScE5XNUlXSGpQN2lkNVYyK3pNcVVQUzcwdW1objgwMC9xOXUKWnBRTitjLy9HVEQzSUhOV3h0bGlXL0xRcTIvRHBpRHE5OHpkK2NWNEgxd3JXZXZpTjJyTDdaS2M0djYvdTRlTAptNVZCWVcrWXo2NDRqVFd5Mm43elQvdmswWnVWSHJxTFZIUmNFb1VxcjFkRjhiYzlEakU1cTNESjAyNU9LY0ltCm9nSFFnQU5QblFXdnFUSURwOUxDMHpuQ1NqSHllVmRyQmpBeDVTN1ArQUxSdTVrUGVTRFp6cTNXMHYrSUt5aXgKM2dhVE16TFpDbFNWVmorRVlDZEVDdEduaVhkNnZzM0piRUJUTnVGaXJoZ09SZk9wQ3V0czJ5K0ZsdzZvbkhISQp1NUtEYTdXbFNGZStLZ3NUYXljQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZIWCsvdm1SSG1lTDNsMXZzZXY0eU02V05aVkpNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFDalBKdEVwVlRmbGNFOXBnNFQxaERHTkJTZW1LQXVVT2VmMEFDNFVLNUJJUnZQZ1JVSwpqTVRuaElOUWE4YktYWGQ2V0JYZVlwSHRSYlYzaWplaGU3QjNzbWdCeXpJRkVIV2hMclBuRUI3R2l5amJaeDhpCnBiT1Bmc3J1c282QXJGUFRDZUZiSVY5YVRVbUNYNVhOL3VsWWxlcmdTeWMrc1JvZGZocGVPR3JCMjhPNUdjUlMKZDNEY1p0aGI0TDZUaTcwY2lPdjRyYXZVT3pyZWFHd3U1ZXIyNXptSGdxSnpOemtXZGRUVnVxblRnNUpEay9RLwp5Y0xQOTNmdHZ0cUx5bTJPZEdEQW9xT2U1Um9nMGUxL2NHVms1eklySmZEbVE3MlZvd0RHNUJvS3ZRRzJvKzJSCmRuVFZLR2pJMU9RMXFnSmxuMUxWQXgzRnhlNURvenhuTmNKSQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://13573FCA667416B3433DBAB29B14CC0B.gr7.eu-west-1.eks.amazonaws.com
+  name: arn:aws:eks:eu-west-1:602293776685:cluster/palmyra-studio-cluster-dev
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-west-1:602293776685:cluster/palmyra-studio-cluster-dev
+    user: arn:aws:eks:eu-west-1:602293776685:cluster/palmyra-studio-cluster-dev
+  name: arn:aws:eks:eu-west-1:602293776685:cluster/palmyra-studio-cluster-dev
+current-context: arn:aws:eks:eu-west-1:602293776685:cluster/palmyra-studio-cluster-dev
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-west-1:602293776685:cluster/palmyra-studio-cluster-dev
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - eu-west-1
+      - eks
+      - get-token
+      - --cluster-name
+      - palmyra-studio-cluster-dev
+      command: aws

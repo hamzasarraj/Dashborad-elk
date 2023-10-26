@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.vermeg</groupId>
     <artifactId>dashboard</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-release</version>
     <name>dashboard</name>
     <description>dashboard</description>
     <properties>

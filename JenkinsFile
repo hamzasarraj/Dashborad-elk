@@ -1,8 +1,8 @@
 pipeline {
     environment{
-    registry="medjaziri/jaziribacproject"
+    registry=""
     registryCredential='dockerHub'
-    dokerImage="jaziribacproject"
+    dokerImage="hibadashboardproject"
 }
     agent any
     stages {

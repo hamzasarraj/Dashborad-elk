@@ -16,6 +16,7 @@ pipeline {
         stage('Print Environment') {
             steps {
                 script {
+                    sh 'echo "PATH: $PATH"'
                     sh 'echo "Maven Version: $(mvn -v)"'
                     sh 'printenv'
                 }

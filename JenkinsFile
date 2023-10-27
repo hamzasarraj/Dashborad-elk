@@ -14,7 +14,12 @@ pipeline {
             }
         }
        
-       
+       stage("clean Project"){
+        steps {
+            sh 'mvn clean install -U -DskipTests'
+            echo 'compile stage done'
+            }
+        }
    
         stage("compile Project"){
         steps {

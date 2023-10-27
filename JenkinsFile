@@ -13,6 +13,14 @@ pipeline {
                 echo 'checkout stage'
             }
         }
+        stage('Print Environment') {
+            steps {
+                script {
+                    sh 'echo "Maven Version: $(mvn -v)"'
+                    sh 'printenv'
+                }
+            }
+        }
        
        stage("clean Project"){
         steps {

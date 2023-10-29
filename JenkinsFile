@@ -1,7 +1,7 @@
 pipeline {
     environment{
-    registry=""
-    registryCredential='dockerHub'
+    registry="hamza1991/dashboard1991"
+    registryCredential='dashboard'
     dokerImage="hibadashboardproject"
 }
     agent any

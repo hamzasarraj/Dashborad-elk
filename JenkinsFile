@@ -74,23 +74,6 @@ pipeline {
                 sh "docker rmi ${registry}:${BUILD_NUMBER}"
             }
         }
-        stage('Remote SSH') {
-            steps {
-                script {
-                    def remote = [:]
-                    remote.name = env.REMOTE_NAME
-                    remote.host = env.REMOTE_HOST
-                    remote.user = env.REMOTE_USER
-                    remote.password = env.REMOTE_PASSWORD
-                    remote.allowAnyHosts = true
-
-                    // Copy your Kubernetes manifests to the remote machine
-                    sshCommand remote: remote, command: "scp -r /home/hiba/deployment.yml  ${env.REMOTE_USER}@${env.REMOTE_HOST}:/tmp/"
-
-                    // SSH into the remote machine and apply the manifests using kubectl
-                    sshCommand remote: remote, command: "KUBECONFIG=${env.KUBE_CONFIG_PATH} kubectl apply -f /tmp/manifests/"
-                }
-            }
-        }
+        
     }
 }

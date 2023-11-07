@@ -37,7 +37,7 @@ pipeline {
                     sh "mvn clean verify sonar:sonar \
                         -Dsonar.projectKey=dashboard-backend \
                         -Dsonar.projectName='dashboard-backend' \
-                        -Dsonar.host.url=http://172.17.0.2:9000 \
+                        -Dsonar.host.url=http://localhost:9000 \
                         -Dsonar.token=sqp_6faae86e78e63cd549ae052af1838534b193b6d3"
                 }
             }

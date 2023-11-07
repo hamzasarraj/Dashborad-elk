@@ -8,6 +8,8 @@ pipeline {
         REMOTE_USER = 'hiba'
         REMOTE_PASSWORD = 'hiba'
         KUBE_CONFIG_PATH = '~/.kube/config' // Path to your Kubernetes configuration file
+        NEXUS_CREDENTIALS_ID = 'nexus-credentials' // ID of the Nexus credentials in Jenkins
+        NEXUS_REPOSITORY_URL = 'http://localhost:8081/repository/front-dashboard/'
     }
     agent any
     stages {
@@ -52,10 +54,17 @@ pipeline {
                 sh 'mvn package -DskipTests'
             }
         }
+        stage('Maven Deploy to Nexus') {
+            steps {
+                 def mavenHome = tool 'Maven' // 'Maven' should match the Maven installation name in Jenkins
+                    def mavenCmd = "${mavenHome}/bin/mvn"
+
+                    sh "${mavenCmd} clean install deploy -DskipTests -Dmaven.test.failure.ignore=true -DaltDeploymentRepository=nexus::default::${NEXUS_REPOSITORY_URL}"
+            }
+        }
         stage("Docker Build") {
             steps {
                 script {
-                   // sh 'docker build -t hamza1991/dashboard1991 .'
                     dockerImage = docker.build("${registry}:${BUILD_NUMBER}")
                 }
             }

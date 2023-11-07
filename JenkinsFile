@@ -56,10 +56,8 @@ pipeline {
         }
         stage('Maven Deploy to Nexus') {
             steps {
-                 def mavenHome = tool 'Maven' // 'Maven' should match the Maven installation name in Jenkins
-                    def mavenCmd = "${mavenHome}/bin/mvn"
 
-                    sh "${mavenCmd} clean install deploy -DskipTests -Dmaven.test.failure.ignore=true -DaltDeploymentRepository=nexus::default::${NEXUS_REPOSITORY_URL}"
+                    sh "mvn clean install deploy -DskipTests -Dmaven.test.failure.ignore=true -DaltDeploymentRepository=nexus::default::${NEXUS_REPOSITORY_URL}"
             }
         }
         stage("Docker Build") {
